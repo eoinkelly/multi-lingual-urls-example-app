@@ -11,6 +11,11 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
   end
 
+  def show_by_title
+      @post = Post.find_by(title: params[:title])
+      render :show
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
